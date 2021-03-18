@@ -1,7 +1,7 @@
 {
-  "name": "webdevsynergy",
+  "name": "webcachalot",
   "version": "1.0.0",
-  "description": "🌐 Reconfigurable easy way to web development.",
+  "description": "🌊 A framework for developing a standalone application on a web stack with a default browser as a GUI.",
   "main": "index.js",
   "scripts": {
     "rls": "browser-sync start --config config-bs.js",
@@ -13,8 +13,6 @@
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
-    "gulp-pug": "^4.0.1",
-    "gulp-stylus": "^2.7.0",
     "gulp-terser": "^2.0.1",
     "gulp-typescript": "^6.0.0-alpha.1",
     "typescript": "^4.2.3"
