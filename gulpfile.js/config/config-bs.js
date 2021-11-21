@@ -29,7 +29,7 @@ module.exports = {
     },
     server: false,
     proxy: {
-        target: "https://localhost:3456",
+        target: "http://localhost:3456",
         ws: true
     },
     port: 3000,
@@ -67,9 +67,9 @@ module.exports = {
     reloadDebounce: 500,
     reloadThrottle: 0,
     plugins: [],
-    injectChanges: true,
+    injectChanges: false,
     startPath: null,
-    minify: true,
+    minify: false,
     host: null,
     localOnly: false,
     codeSync: true,

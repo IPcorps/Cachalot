@@ -13,6 +13,7 @@
     "node": ">=16 <17"
   },
   "devDependencies": {
+    "@types/node": "16.11.9",
     "browser-sync": "2.27.7",
     "gulp": "4.0.2",
     "gulp-del-lines": "1.0.5",

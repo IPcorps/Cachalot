@@ -14,7 +14,7 @@ const tsProject_C = gulpTypescript.createProject("./tsconfig.json", { module: "E
 exports.change = (path, client) => {
 
     // To see something happen
-    console.log("\x1B[90m%s \x1b[36m%s\x1b[0m", new Date().toLocaleTimeString(), path, "start of processing...");
+    console.log("\x1B[90m%s \x1b[36m%s\x1b[0m", new Date().toLocaleTimeString(), path, `start of processing ${client ? "ES" : "UMD"} ...`);
 
     // TypeScript processing for require
     const tsRes = gulp.src(path)                                                                // Reading the file 
