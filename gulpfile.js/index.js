@@ -1,32 +1,24 @@
 
 // File extension router
 
-const { watch } = require("gulp");
-
-// Configuration preparation
-const wdsOpt = require('./config-wds.js');
+const gulp = require("gulp");
 
 exports.watcher = () => {
 
-    // TypeScript -> JavaScript
-    if (wdsOpt.ts.use) {
-        const ts = require("./ts");
-        watch(["app/**/*.ts", "!**/*.d.*"])
-            .on('change', ts.change);
-    }
+    const ts = require("./ts");
+    // TypeScript -> JavaScript (client)
+    gulp.watch(["src/client/**/*.tsx", "!**/*.d.*"])
+        .on("change", path => ts.change(path, true));
+    // TypeScript -> JavaScript (server)
+    gulp.watch(["src/server/**/*.tsx", "!**/*.d.*"])
+        .on("change", path => ts.change(path));
 
-    // Pug -> HTML
-    if (wdsOpt.pug) {
-        const pug = require("./pug");
-        watch("app/**/*.pug")
-            .on('change', pug.change);
-    }
-
-    // Stylus -> CSS
-    const styl = require("./styl");
-    if (wdsOpt.styl) {
-        watch("app/**/*.styl")
-            .on('change', styl.change);
-    }
+    // Server file change watcher
+    const node = require("./node");
+    node.change();
+    gulp.watch(["app/**/*"])
+        .on("change", node.change);
+    console.log("\x1B[90m%s \x1b[36m%s\x1b[0m", new Date().toLocaleTimeString(),
+        "URL: http://localhost:3456");
 
 };
