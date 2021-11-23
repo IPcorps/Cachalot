@@ -1,3 +1,2 @@
 
-start node wc/server/start.js
-start http://localhost:3333
+node wc/server/start.js

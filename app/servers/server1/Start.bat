@@ -1,2 +1,2 @@
 
-start node wc/start.js
+node wc/start.js
