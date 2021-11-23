@@ -29,7 +29,7 @@ module.exports = {
     },
     server: false,
     proxy: {
-        target: "http://localhost:3456",
+        target: "http://localhost:3333",
         ws: true
     },
     port: 3000,

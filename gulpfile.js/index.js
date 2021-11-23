@@ -7,10 +7,10 @@ exports.watcher = () => {
 
     const ts = require("./ts");
     // TypeScript -> JavaScript (client - ES)
-    gulp.watch(["src/local/**/*.tsx", "!src/local/wc/server/**/*.tsx", "!**/*.d.*"])
+    gulp.watch(["src/local/**/*.tsx", "src/modules/client/**/*.tsx", "!src/local/wc/server/**/*.tsx", "!**/*.d.*"])
         .on("change", path => ts.change(path, true));
     // TypeScript -> JavaScript (server - UMD)
-    gulp.watch(["src/servers/**/*.tsx", "src/local/wc/server/**/*.tsx", "!**/*.d.*"])
+    gulp.watch(["src/servers/**/*.tsx", "src/modules/server/**/*.tsx", "src/local/wc/server/**/*.tsx", "!**/*.d.*"])
         .on("change", path => ts.change(path));
 
     // Server file change watcher

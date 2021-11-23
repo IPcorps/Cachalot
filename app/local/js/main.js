@@ -1,0 +1,1 @@
+import gui from"/wc/gui/test.js";{let e="🙈 I`m here! 🙉";document.addEventListener("DOMContentLoaded",(()=>{document.body.innerText=e})),console.log("And here! 🙊")}gui();
